@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  gmail-service:
+    container_name: gmail-service
+    image: nzlvrsrg/gmail-service:0.0.1
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      KAFKA_URL: kafka:29092
+    ports:
+      - 8084:9094
+    networks:
+      - microservices_network
+
+networks:
+  microservices_network:
+    name: microservices_network

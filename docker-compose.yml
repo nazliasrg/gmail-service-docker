@@ -10,7 +10,7 @@ services:
     environment:
       KAFKA_URL: kafka:29092
     ports:
-      - 8084:9094
+      - 7074:9094
     networks:
       - microservices_network
 
